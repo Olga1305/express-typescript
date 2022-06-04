@@ -6,4 +6,8 @@ const validateCountriesQueries = oneOf([
 
 const validateStringParam = param(':str').isString().notEmpty();
 
-export { validateCountriesQueries, validateStringParam };
+const validateStringQueries = oneOf([
+    query('start').isString(),
+    query('end').isString()]);
+
+export { validateCountriesQueries, validateStringParam, validateStringQueries };
