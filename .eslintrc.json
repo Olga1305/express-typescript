@@ -1,0 +1,37 @@
+{
+    "root": true,
+    "env": {
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-typescript/base",
+        "plugin:node/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true
+        }
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "import"
+    ],
+    "settings": {
+        "noInlineConfig": true
+    },
+    "rules": {
+        "import/extensions": "off",
+        "linebreak-style": "off",
+        "node/no-unsupported-features/es-syntax": "off",
+        "no-underscore-dangle": "off",
+        "import/prefer-default-export": "off"
+    }
+}
