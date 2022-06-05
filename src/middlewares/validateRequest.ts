@@ -4,7 +4,7 @@ const validateCountriesQueries = oneOf([
     query('filter').isString(),
     query('order').isString().isIn(['asc', 'desc'])]);
 
-const validateStringParam = param(':str').isString().notEmpty();
+const validateStringParam = param('str').isString().notEmpty();
 
 const validateStringQueries = oneOf([
     query('start').isString(),
