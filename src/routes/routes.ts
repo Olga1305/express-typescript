@@ -44,10 +44,12 @@ router.get('/reverse/:str', validateStringParam, async (req: Request, res: Respo
 router.get('/append', validateStringQueries, async (req: Request, res: Response, next: NextFunction) => {
     const { start, end } = req.query;
     try {
-        const result = validationResult(req);
-        const hasErrors = !result.isEmpty();
-        if (hasErrors) {
-            res.status(StatusCodes.UNPROCESSABLE_ENTITY).send(ReasonPhrases.UNPROCESSABLE_ENTITY);
+        if (start || end) {
+            const result = validationResult(req);
+            const hasErrors = !result.isEmpty();
+            if (hasErrors) {
+                res.status(StatusCodes.UNPROCESSABLE_ENTITY).send(ReasonPhrases.UNPROCESSABLE_ENTITY);
+            }
         }
         const response = addStringService.getModifiedArray(start as string, end as string);
         res.status(StatusCodes.OK).json(response);

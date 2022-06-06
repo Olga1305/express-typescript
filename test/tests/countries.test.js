@@ -13,7 +13,6 @@ describe('Countries suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then((res) => {
-          debug(res.body);
           expect(res.body).to.be.an('array');
           jestExpect(res.body).not.toHaveLength(0);
         });
@@ -50,6 +49,7 @@ describe('Countries suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then((res) => {
+          debug(res.body);
           jestExpect(res.body).toEqual(expectedArray);
         });
     });
@@ -77,6 +77,7 @@ describe('Countries suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then((res) => {
+          debug(res.body);
           jestExpect(res.body).toEqual(expectedArray);
         });
     });
@@ -104,6 +105,7 @@ describe('Countries suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then((res) => {
+          debug(res.body);
           jestExpect(res.body).toEqual(expectedArray);
         });
     });
@@ -149,6 +151,7 @@ describe('Countries suite', () => {
         .expect(200)
         .expect('Content-Type', /json/)
         .then((res) => {
+          debug(res.body);
           jestExpect(res.body).toEqual(expectedArray);
         });
     });

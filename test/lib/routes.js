@@ -1,11 +1,15 @@
 module.exports = {
   countries: {
     getAll: '/countries',
-    getFiltered: (str) => `/countries?filter=${str}`,
-    getOrdered: (str) => `/countries?order=${str}`,
-    getFilteredAndOrdered: (str1, str2) =>
-      `/countries?filter=${str1}&order=${str2}`,
+    getFiltered: (filter) => `/countries?filter=${filter}`,
+    getOrdered: (order) => `/countries?order=${order}`,
+    getFilteredAndOrdered: (filter, order) =>
+      `/countries?filter=${filter}&order=${order}`,
   },
   reverse: (str) => `/reverse/${str}`,
-  append: '/append',
+  append: {
+    appendToStart: (start) => `/append?start=${start}`,
+    appendToEnd: (end) => `/append?end=${end}`,
+    appendToStartAndToEnd: (start, end) => `/append?start=${start}&end=${end}`,
+  },
 };
