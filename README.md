@@ -36,13 +36,19 @@ Optional:
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone <repository URL>
 ```
 
 ## Installing NPM modules
 
 ```
 npm install
+```
+
+## Building application
+
+```
+npm run build
 ```
 
 ## Running application
@@ -71,6 +77,26 @@ npm run dev
 
 ```
 npm run lint
+```
+
+## Docker
+
+### Running from Dockerfile
+
+From the app directory run:
+
+```
+docker build . -t <image name>
+docker run -dp 3000:3000 <image name>
+```
+
+### Running from dockercompose.yml
+
+From the app directory run:
+
+```
+docker-compose build
+docker-compose up
 ```
 
 ## Documentation

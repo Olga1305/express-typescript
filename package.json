@@ -17,6 +17,9 @@
   ],
   "author": "Olga Dokukova",
   "license": "ISC",
+  "repository": {
+    "url": "https://github.com/Olga1305/express-typescript"
+  },
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [

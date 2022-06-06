@@ -90,9 +90,5 @@ describe('Append strings suite', () => {
           jestExpect(res.body).toEqual(expectedArray);
         });
     });
-
-    // it('should get 404 with empty string', async () => {
-    //   await request.get(routes.reverse('')).expect(404);
-    // });
   });
 });
