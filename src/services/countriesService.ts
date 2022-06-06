@@ -1,12 +1,9 @@
-import axios from 'axios';
-import config from '../common/config';
 import { Country } from '../common/types';
-
-const { COUNTRIES_URL } = config;
+import { getAll } from '../integrations/countriesIntegration';
 
 export const getCountries = async (filter?: string, order?: string): Promise<Country[]> => {
     let countries: Country[];
-    const response = await axios.get(COUNTRIES_URL);
+    const response = await getAll();
     if (response.data) {
         countries = response.data;
         if (filter) {
