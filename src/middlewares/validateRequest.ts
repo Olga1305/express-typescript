@@ -1,4 +1,6 @@
-import { query, oneOf, param } from 'express-validator';
+import { query, oneOf, param, validationResult } from 'express-validator';
+import { Request, Response } from 'express';
+import { ReasonPhrases, StatusCodes } from 'http-status-codes';
 
 const validateCountriesQueries = oneOf([
     query('filter').isString(),
@@ -10,4 +12,12 @@ const validateStringQueries = oneOf([
     query('start').isString(),
     query('end').isString()]);
 
-export { validateCountriesQueries, validateStringParam, validateStringQueries };
+const validate = (req: Request, res: Response) => {
+    const result = validationResult(req);
+    const hasErrors = !result.isEmpty();
+    if (hasErrors) {
+        res.status(StatusCodes.UNPROCESSABLE_ENTITY).send(ReasonPhrases.UNPROCESSABLE_ENTITY);
+    }
+}
+
+export { validateCountriesQueries, validateStringParam, validateStringQueries, validate };
