@@ -70,7 +70,7 @@ describe('Append strings suite', () => {
 
       // Test
       await request
-        .get(routes.append.appendToEnd(end))
+        .get(append.appendToEnd(end))
         .set('Accept', 'application/json')
         .expect(200)
         .expect('Content-Type', /json/)
@@ -85,7 +85,7 @@ describe('Append strings suite', () => {
       let expectedArray: string[];
 
       await request
-        .get(routes.append.appendToStartAndToEnd('', ''))
+        .get(append.appendToStartAndToEnd('', ''))
         .expect(200)
         .then((res) => {
           debug(res.body);
@@ -99,7 +99,7 @@ describe('Append strings suite', () => {
 
       // Test
       await request
-        .get(routes.append.appendToStartAndToEnd(start, end))
+        .get(append.appendToStartAndToEnd(start, end))
         .set('Accept', 'application/json')
         .expect(200)
         .expect('Content-Type', /json/)
